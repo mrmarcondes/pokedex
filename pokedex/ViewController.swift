@@ -33,11 +33,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     parsePokemomnCSV()
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   func parsePokemomnCSV() {
     let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
     
@@ -51,12 +46,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let pokemon = Pokemon(name: name, pokedexId: id)
         pokemons.append(pokemon)
       }
-      
-      
     } catch let err as NSError {
       print(err.debugDescription)
     }
-    
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,11 +71,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-  
+    let pokemon: Pokemon!
+    if inSearchMode {
+      pokemon = filteredPokemons[indexPath.row]
+    } else {
+      pokemon = pokemons[indexPath.row]
+    }
+    
+    performSegue(withIdentifier: "PokemonDetailViewController", sender: pokemon)
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
     if inSearchMode {
       return filteredPokemons.count
     }
@@ -135,6 +133,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
   }
   
-
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "PokemonDetailViewController" {
+      let viewController = segue.destination as? PokemonDetailViewController
+      let pokemon = sender as? Pokemon
+      viewController?.pokemon = pokemon
+      
+      
+    }
+  }
 }
-
