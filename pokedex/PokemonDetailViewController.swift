@@ -13,6 +13,7 @@ class PokemonDetailViewController: UIViewController {
     var pokemon: Pokemon!
   
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var defenseLabel: UILabel!
@@ -20,6 +21,7 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokedexIdLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var attackLabel: UILabel!
+    @IBOutlet weak var currentEvolution: UIImageView!
     @IBOutlet weak var nextEvolution: UIImageView!
   
   
