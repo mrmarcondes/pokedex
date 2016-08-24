@@ -162,6 +162,9 @@
                                             <constraint firstAttribute="width" constant="41" id="znn-vC-q7H"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="Kys-t2-taJ" eventType="touchUpInside" id="BFg-BM-wSR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -336,7 +339,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackLabel" destination="ji6-ZE-gEz" id="WpN-Yq-Orx"/>
+                        <outlet property="backButtonTapped" destination="3FA-Ch-qgy" id="TW8-jD-FjN"/>
+                        <outlet property="currentEvolutionImage" destination="Yjl-op-Cv2" id="HOG-5r-ENi"/>
+                        <outlet property="defenseLabel" destination="tf1-sD-i95" id="i6x-eH-fXK"/>
+                        <outlet property="description" destination="ZAG-DH-zwJ" id="pc6-qL-Mwu"/>
+                        <outlet property="evolutionLabel" destination="rcu-sZ-dnG" id="pcb-e1-yEL"/>
+                        <outlet property="heightLabel" destination="TwG-GF-MR2" id="zZH-db-dlO"/>
                         <outlet property="nameLabel" destination="XxP-g5-4K9" id="ZGX-GP-J6x"/>
+                        <outlet property="nextEvolutionImage" destination="69W-nk-Xbz" id="9CX-OL-5Jp"/>
+                        <outlet property="pokedexLabel" destination="5Uo-4L-6dc" id="iwx-E5-WWW"/>
+                        <outlet property="pokemonImage" destination="0pm-aD-Qwi" id="Ibj-xW-9mL"/>
+                        <outlet property="type" destination="9ZF-CW-BN7" id="BwL-pm-KdK"/>
+                        <outlet property="weightLabel" destination="7bm-70-wP1" id="fqc-dc-CzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qt7-3K-N8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
