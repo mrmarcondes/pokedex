@@ -62,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         pokemon = pokemons[indexPath.row]
       }
       
-      cell.configureCell(pokemon: pokemon)
+      cell.configureCell(pokemon)
       
       return cell
     } else {

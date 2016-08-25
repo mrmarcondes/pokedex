@@ -21,6 +21,7 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokedexIdLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var attackLabel: UILabel!
+    @IBOutlet weak var nextEvolutionLabel: UILabel!
     @IBOutlet weak var currentEvolution: UIImageView!
     @IBOutlet weak var nextEvolution: UIImageView!
   
@@ -29,15 +30,19 @@ class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
       
       nameLabel.text = pokemon.name
-
+      pokemonImage.image = UIImage(named: "\(pokemon.pokedexId)")
+      
+      pokemon.downloadPokemonDetails { 
+//          attackLabel.text = pokemon.attakc
+      }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
   
-  
     @IBAction func backButtonTapped(_ sender: AnyObject) {
       dismiss(animated: true, completion: nil)
     }
+  
 }
