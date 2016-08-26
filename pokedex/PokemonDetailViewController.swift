@@ -30,19 +30,38 @@ class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
       
       nameLabel.text = pokemon.name
-      pokemonImage.image = UIImage(named: "\(pokemon.pokedexId)")
+      let img = UIImage(named: "\(pokemon.pokedexId)")
+      pokemonImage.image = img
+      currentEvolution.image = img
       
       pokemon.downloadPokemonDetails { 
-//          attackLabel.text = pokemon.attakc
+        self.updateUI()
       }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+  
+    func updateUI() {
+      pokedexIdLabel.text = "\(pokemon.pokedexId)"
+      descriptionLabel.text = pokemon.description
+      typeLabel.text = pokemon.type
+      defenseLabel.text = pokemon.defense
+      weightLabel.text = pokemon.weight
+      heightLabel.text = pokemon.height
+      attackLabel.text = pokemon.attack
+      
+      if pokemon.nextEvolutionPokedexId == "" {
+        nextEvolutionLabel.text = "No evolutions"
+        nextEvolution.isHidden = true
+      } else {
+        nextEvolution.isHidden = false
+        nextEvolution.image = UIImage(named: pokemon.nextEvolutionPokedexId)
+        nextEvolutionLabel.text = "Next evolution: \(pokemon.nextEvolutionName)"
+      }
+      
+      
+    
     }
   
     @IBAction func backButtonTapped(_ sender: AnyObject) {
       dismiss(animated: true, completion: nil)
     }
-  
 }
