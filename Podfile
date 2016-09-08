@@ -6,6 +6,9 @@ target 'pokedex' do
   use_frameworks!
 
   # Pods for pokedex
+
+  pod 'SwiftSpinner'
+
   pod 'Alamofire', 
     git: 'https://github.com/Alamofire/Alamofire.git',
     branch: 'swift3'  

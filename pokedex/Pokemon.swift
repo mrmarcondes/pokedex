@@ -162,7 +162,7 @@ class Pokemon {
         }
 
         if let evolutions = dictionary["evolutions"] as? [Dictionary<String, AnyObject>], evolutions.count > 0 {
-          if let to = evolutions[0]["name"] as? String {
+          if let to = evolutions[0]["to"] as? String {
             if to.range(of: "mega") == nil {
               if let evolutionURI = evolutions[0]["resource_uri"] {
                 let nextEvolutionPokedexId = evolutionURI.replacingOccurrences(of: URL_POKEMON, with: "").replacingOccurrences(of: "/", with: "")

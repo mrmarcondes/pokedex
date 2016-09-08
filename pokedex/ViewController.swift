@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
   
   @IBOutlet weak var collection: UICollectionView!
@@ -138,8 +139,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       let viewController = segue.destination as? PokemonDetailViewController
       let pokemon = sender as? Pokemon
       viewController?.pokemon = pokemon
-      
-      
     }
   }
 }

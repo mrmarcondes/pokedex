@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class PokemonDetailViewController: UIViewController {
 
@@ -28,16 +29,20 @@ class PokemonDetailViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      nameLabel.text = pokemon.name
-      let img = UIImage(named: "\(pokemon.pokedexId)")
-      pokemonImage.image = img
-      currentEvolution.image = img
-      
-      pokemon.downloadPokemonDetails { 
-        self.updateUI()
-      }
+        SwiftSpinner.show("Aguarde...", animated: true)
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    nameLabel.text = pokemon.name
+    let img = UIImage(named: "\(pokemon.pokedexId)")
+    pokemonImage.image = img
+    currentEvolution.image = img
+    
+    pokemon.downloadPokemonDetails {
+      self.updateUI()
+      SwiftSpinner.hide()
+    }
+  }
   
     func updateUI() {
       pokedexIdLabel.text = "\(pokemon.pokedexId)"
