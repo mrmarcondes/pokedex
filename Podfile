@@ -11,5 +11,5 @@ target 'pokedex' do
 
   pod 'Alamofire', 
     git: 'https://github.com/Alamofire/Alamofire.git',
-    branch: 'swift3'  
+    branch: 'swift3-rebased'
 end

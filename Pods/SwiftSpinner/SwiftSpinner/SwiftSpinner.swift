@@ -295,7 +295,7 @@ open class SwiftSpinner: UIView {
     //
     // Tap handler
     //
-    open func addTapHandler(_ tap: (()->()), subtitle subtitleText: String? = nil) {
+    open func addTapHandler(_ tap: @escaping (()->()), subtitle subtitleText: String? = nil) {
         clearTapHandler()
         
         //vibrancyView.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("didTapSpinner")))

@@ -1,25 +1,25 @@
 PODS:
-  - Alamofire (4.0.0-beta.1)
+  - Alamofire (4.0.0-beta.2)
   - SwiftSpinner (0.9.5)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift3`)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift3-rebased`)
   - SwiftSpinner
 
 EXTERNAL SOURCES:
   Alamofire:
-    :branch: swift3
+    :branch: swift3-rebased
     :git: https://github.com/Alamofire/Alamofire.git
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 3cc5b4e8453bec9fd6b973d60e6b0605a38e4cf4
+    :commit: 2e702055932b9cdce6863d46c25d1770f64f75a6
     :git: https://github.com/Alamofire/Alamofire.git
 
 SPEC CHECKSUMS:
-  Alamofire: 698bf56c9e48d3248168e4a3a90588ac2e23836a
+  Alamofire: 7f837be535fe424db2b87d9117f13836939719ca
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
 
-PODFILE CHECKSUM: d85a150d0d089a7792e245df6010c22989daa694
+PODFILE CHECKSUM: 1d9bbb406b758b86cf25c548b7cfebb707aec587
 
 COCOAPODS: 1.0.1
