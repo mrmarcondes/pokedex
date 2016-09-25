@@ -36,6 +36,7 @@ class PokemonDetailViewController: UIViewController {
     nameLabel.text = pokemon.name
     let img = UIImage(named: "\(pokemon.pokedexId)")
     pokemonImage.image = img
+    
     currentEvolution.image = img
     
     pokemon.downloadPokemonDetails {
@@ -53,6 +54,10 @@ class PokemonDetailViewController: UIViewController {
       heightLabel.text = pokemon.height
       attackLabel.text = pokemon.attack
       
+      pokemonImage.isHidden = false
+      descriptionLabel.isHidden = false
+      currentEvolution.isHidden = false
+      
       if pokemon.nextEvolutionPokedexId == "" {
         nextEvolutionLabel.text = "No evolutions"
         nextEvolution.isHidden = true
@@ -61,12 +66,13 @@ class PokemonDetailViewController: UIViewController {
         nextEvolution.image = UIImage(named: pokemon.nextEvolutionPokedexId)
         nextEvolutionLabel.text = "Next evolution: \(pokemon.nextEvolutionName)"
       }
-      
-      
-    
     }
   
     @IBAction func backButtonTapped(_ sender: AnyObject) {
+      descriptionLabel.isHidden = true
+      currentEvolution.isHidden = true
+      nextEvolution.isHidden = true
+      pokemonImage.isHidden = true
       dismiss(animated: true, completion: nil)
     }
 }
